@@ -1,0 +1,21 @@
+.slideshow-container {
+    @apply max-w-screen-md mx-auto overflow-hidden relative;
+  }
+
+  .slide {
+    @apply hidden absolute w-full;
+  }
+
+  .slide img {
+    @apply w-full h-auto;
+  }
+
+  .button-container {
+    @apply text-center mt-4;
+  }
+
+  .prev, .next {
+    @apply inline-block py-2 px-4 bg-blue-500 text-white border-none cursor-pointer;
+  }
+
+  

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/dist/output.css" rel="stylesheet" />
+  <title>Nested Hover Dropdown Menu</title>
+</head>
+<body class="bg-gray-100 h-screen flex items-center justify-center">
+
+  <div class="relative group">
+    <!-- Flag Icon -->
+    
+    <img id="flag" src="../../Images/Header//cambodia_flag.webp" alt="Flag" class="w-6 h-6 rounded-full shadow-md">
+    <!-- Language Change Select -->
+    <select onchange="changeLanguage(this.value)" class="absolute top-1 -mt-1 -mr-1 bg-blue-500 text-black w-4 h-4 flex items-center justify-center rounded-full focus:outline-none">
+      <option value="1">Language 1</option>
+      <option value="2">Language 2</option>
+    </select>
+  </div>
+
+  <script>
+    function changeLanguage(selectedValue) {
+      const flagElement = document.getElementById('flag');
+
+      if (selectedValue === '1') {
+        flagElement.src = '../../Images/Header/British_flag.png';
+      } else if (selectedValue === '2') {
+        flagElement.src = '../../Images/Header//cambodia_flag.webp';
+      }
+    }
+  </script>
+
+</body>
+</html>

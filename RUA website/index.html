@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./dist/output.css" rel="stylesheet" />
+    <link href="./Css/style.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>RUA | Home</title>
+    
+  </head>
+  <body > 
+    <!--HEADER-->
+    <header class="w-full">
+      <nav class="max-w-8xl bg-white border-gray-200 dark:border-gray-700">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+          <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="./Images/Header/image1.webp" alt="Logo" class="h-20 flex object-fit relative"/>
+            <img src="./Images/Header/IMG_0853.JPG" alt="logo2" class="h-20 hidden lg:block">
+              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">RUA</span>
+          </a>
+          <!--NAV BAR -->
+          <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-200 dark:text-green-600 dark:hover:bg-green-700 hover:text-white dark:focus:ring-green-600" aria-controls="navbar-dropdown" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+              </svg>
+          </button>
+          
+          <div class="mt-5 hidden w-full md:w-auto flex-col md:flex  items-center gap-5  md:order-1" id="navbar-dropdown">
+              <!--SEARCH BAR-->
+              <form class="w-full flex gap-2">   
+                  <label for="voice-search" class="sr-only">Search</label>
+                  <div class="relative w-full">
+                      <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                          <svg aria-hidden="true" class="w-5 h-5 text-gray-500 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                      </div>
+                      <input type="text" id="voice-search" class= "w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block  pl-10 p-2.5" placeholder="Search..." required="">
+                      <button type="button" class="flex absolute inset-y-0 right-0 items-center pr-3">
+                          <svg aria-hidden="true" class="w-4 h-4 text-gray-500 hover:text-gray-900 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clip-rule="evenodd"></path></svg>
+                      </button>
+                  </div>
+                  <button type="submit" class="inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-green-700 border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                      <svg aria-hidden="true" class=" -ml-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>Search
+                  </button>
+
+                  <select id="languages" onchange="changeLanguage(this.value)" class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-green-500 focus:border-green-500 block w-[120px] p-2.5 dark:bg-green-600 dark:border-green-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                      <option selected value="1">English :</option>
+                      <option value="2">ខ្មែរ :</option>
+                  </select>
+
+                  <button>
+                    <img id="flag" src="./Images/Header/British_flag.png" class="h-[30px] w-[40px]">
+                  </button>
+              </form>
+              <!-- <div>
+                <button>
+                  <img src="./Images/Header/British_flag.png" class="h-[20px] w-[20px] top-0 absolute">
+                </button>
+              </div> -->
+              <!--MENU  LIST-->
+            <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border  border-gray-100 rounded-lg rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  bg-yellow-50 md:bg-white">
+              <li class="hover:bg-yellow-100 transistion duration-300 p-3 rounded-md relative inline-block group">
+                <a href="./index.html" class="text-green-700 border-none transition ">HOME</a>
+              </li>
+              <li>
+                  <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full text-green-700  hover:bg-yellow-100 p-3 rounded-md relative group">About RUA <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                  </svg></button>
+                  <!-- Dropdown menu -->
+                  <div id="dropdownNavbar" class="z-10 hidden font-normal  divide-y divide-gray-100 rounded-lg shadow w-60 bg-green-50">
+                      <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                        <li>
+                          <a href="#" class="block px-4 py-2 text-green-600 text-sm no-underlinev hover:bg-yellow-100">Rector's Welcome Message</a>
+                        </li>
+                        <li>
+                          <a href="#" class="block px-4 py-2 text-green-600 text-sm no-underline hover:bg-yellow-100">History of Royal University of Agriculture</a>
+                        </li>
+                        <li>
+                          <a href="#" class="block px-4 py-2 text-green-600 text-sm no-underline hover:bg-yellow-100">Core Value, Vision and Mission</a>
+                        </li>
+                      </ul>
+                  </div>
+              </li>
+              <li>
+                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar1" class="flex items-center justify-between w-full text-green-700  hover:bg-yellow-100 transistion duration-300 p-3 rounded-md relative group">FACULTIES<svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg></button>
+                <!-- Dropdown menu -->
+                <div id="dropdownNavbar1" class="z-10 hidden font-normal  divide-y divide-gray-100 rounded-lg shadow w-60 bg-green-50">
+                  <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                    <li>
+                      <a href="#option" class="block px-4 py-2 text-green-600 text-sm no-underlinev hover:bg-yellow-100">Faculties</a>
+                    </li>
+                    <li>
+                      <a href="#option" class="block px-4 py-2 text-green-600 text-sm no-underline hover:bg-yellow-100">Center</a>
+                    </li>
+                    <li>
+                      <a href="#option" class="block px-4 py-2 text-green-600 text-sm no-underline hover:bg-yellow-100">Office</a>
+                    </li>
+                  </ul>
+              </div>
+            </li>
+            <li>
+              <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full text-green-700  hover:bg-yellow-100 transistion duration-300 p-3 rounded-md relative group">DIVISIONS/CENTERS<svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+              </svg></button>
+              <!-- Dropdown menu -->
+              <div id="dropdownNavbar4" class="z-10 hidden font-normal  divide-y divide-gray-100 rounded-lg shadow w-60 bg-green-50">
+                <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-green-600 text-sm no-underlinev hover:bg-yellow-100">Division</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-green-600 text-sm no-underline hover:bg-yellow-100">Center</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-green-600 text-sm no-underline hover:bg-yellow-100">Office</a>
+                  </li>
+                </ul>
+            </div>
+            </li>
+            <li>
+              <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar2" class="flex items-center justify-between w-full text-green-700  hover:bg-yellow-100 transistion duration-300 p-3 rounded-md relative group">LIBRARY<svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+              </svg></button>
+              <!-- Dropdown menu -->
+              <div id="dropdownNavbar2" class="z-10 hidden font-normal  divide-y divide-gray-100 rounded-lg shadow w-60 bg-green-50">
+                <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-green-600 text-sm no-underlinev hover:bg-yellow-100">Rector's Welcome Message</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-green-600 text-sm no-underline hover:bg-yellow-100">History of Royal University of Agriculture</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-green-600 text-sm no-underline hover:bg-yellow-100">Core Value, Vision and Mission</a>
+                  </li>
+                </ul>
+            </div>
+            </li>
+
+              </li>
+              <li>
+                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar6" class="flex items-center justify-between w-full text-green-700  hover:bg-yellow-100 transistion duration-300 p-3 rounded-md relative group">Forum
+                  <!-- <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg> -->
+              </button>
+                <!-- Dropdown menu -->
+                <!-- <div id="dropdownNavbar6" class="z-10 hidden font-normal  divide-y divide-gray-100 rounded-lg shadow w-60 bg-green-50">
+                      <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                        <li>
+                          <a href="#" class="block px-4 py-2 text-green-600 text-sm no-underlinev hover:bg-yellow-100">Rector's Welcome Message</a>
+                        </li>
+                        <li>
+                          <a href="#" class="block px-4 py-2 text-green-600 text-sm no-underline hover:bg-yellow-100">History of Royal University of Agriculture</a>
+                        </li>
+                        <li>
+                          <a href="#" class="block px-4 py-2 text-green-600 text-sm no-underline hover:bg-yellow-100">Core Value, Vision and Mission</a>
+                        </li>
+                      </ul>
+                  </div> -->
+              </li>
+              <li>
+                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar5" class="flex items-center justify-between w-full text-green-700  hover:bg-yellow-100 transistion duration-300 p-3 rounded-md relative group">LINK<svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg></button>
+                <!-- Dropdown menu -->
+                <div id="dropdownNavbar5" class="z-10 hidden font-normal  divide-y divide-gray-100 rounded-lg shadow w-60 bg-green-50">
+                      <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                        <li>
+                          <a href="#" class="block px-4 py-2 text-green-600 text-sm no-underlinev hover:bg-yellow-100">Rector's Welcome Message</a>
+                        </li>
+                        <li>
+                          <a href="#" class="block px-4 py-2 text-green-600 text-sm no-underline hover:bg-yellow-100">History of Royal University of Agriculture</a>
+                        </li>
+                        <li>
+                          <a href="#" class="block px-4 py-2 text-green-600 text-sm no-underline hover:bg-yellow-100">Core Value, Vision and Mission</a>
+                        </li>
+                      </ul>
+                  </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="w-full border-[3px] border-green-600 shadow-lg">
+      </nav>
+    </header>
+
+    <!--SLIDE SHOW-->
+
+    <div class="w-full">
+      <div class="max-w-7xl mx-auto after:sliderAx h-auto">
+        <div id="slider-1" class="container mx-auto relative">
+          <div class="bg-cover bg-center  h-[600px] text-white py-24 px-10 object-fill" style="background-image: url(./Images/SlideSlow/2023-12-15\ 11.00.59.jpg)">
+         <div class="md:w-1/2 absolute bottom-[20%]">
+          <p class="font-bold text-sm uppercase">Pic1</p>
+          <p class="text-3xl font-bold">Hello world</p>
+          <p class="text-2xl mb-10 leading-none">slide show number 1</p>
+          <a href="#" class="bg-green-800 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Contact us</a>
+          </div>  
+      </div> <!-- CONTAINER -->
+        <br>
+        </div>
+  
+        <div id="slider-2" class="container mx-auto relative">
+          <div class="bg-cover bg-top  h-[600px] text-white py-24 px-10 object-fill" style="background-image: url(./Images/SlideSlow/2023-12-15\ 11.01.29.jpg)">
+          <div class="absolute bottom-[20%]">
+            <p class="font-bold text-sm uppercase">Pic2</p>
+            <p class="text-3xl font-bold">Hello world</p>
+            <p class="text-2xl mb-10 leading-none">slide show number 2</p>
+            <a href="#" class="bg-green-800 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Contact us</a>
+          </div>
+           
+      </div> <!-- container -->
+        <br>
+        </div>
+  
+        
+      </div>
+    </div>
+
+    <div  class="flex justify-between w-12 mx-auto pb-2">
+            <button id="sButton1" onclick="sliderButton1()" class="bg-green-200 rounded-full w-4 pb-2 " ></button>
+        <button id="sButton2" onclick="sliderButton2() " class="bg-green-200 rounded-full w-4 p-2"></button>
+
+      </div>
+
+  
+    <!--option-->
+    <div id="option" class="container mx-auto my-10 flex items-center justify-center">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <!-- Blog Entry 1 -->
+          <a href="./faculty.html" class="transistion max-w-sm relative shadow-md rounded-lg cursor-pointer h-[350px] hover:-translate-y-1 hover:scale-105 duration-300">
+            <img src="./Images/Option/2023-12-18 13.56.23.jpg" alt="" class="w-full h-[350px] bject-cover rounded-lg">
+            <div class="absolute bottom-0 left-0 right-0 h-16 bg-black bg-opacity-50 backdrop-blur text-white p-4 rounded-b-lg">
+              <h1 class="text-2xl font-semibold">Faculty</h1>
+              <!-- <p class="mt-2"></p> -->
+            </div>
+          </a>
+
+          <!-- Blog Entry 2 -->
+          <a href="#" class=" transistion max-w-sm relative shadow-md rounded-lg cursor-pointer h-[350px] hover:-translate-y-1 hover:scale-105 duration-300">
+            <img src="./Images/Option/2023-12-18 13.56.45.jpg" alt="" class="w-full h-[350px] object-fill rounded-lg">
+            <div class="absolute bottom-0 left-0 right-0 h-16 bg-black bg-opacity-50 backdrop-blur text-white p-4 rounded-b-lg">
+              <h1 class="text-2xl font-semibold">Divisions</h1>
+              <!-- <p class="mt-2">Office</p> -->
+            </div>
+          </a>
+
+          <!-- Blog Entry 3 -->
+          <a href="#" class=" transistion max-w-sm relative shadow-md rounded-lg cursor-pointer h-[350px] hover:-translate-y-1 hover:scale-105 duration-300">
+            <img src="./Images/Option/2023-12-18 13.56.45.jpg" alt="" class="w-full h-[350px] object-cover rounded-lg">
+            <div class="absolute bottom-0 left-0 right-0 h-16 bg-black bg-opacity-50 backdrop-blur text-white p-4 rounded-b-lg">
+              <h1 class="text-2xl font-semibold">Nature Image</h1>
+            </div>
+          </div>
+        </a>
+  </div>
+
+    <!--INFORMATION -->
+
+    <!--BUTTON-->
+    <div class="bg-lime-500 ">
+      <div class="relative pt-10 w-36 mx-auto">
+        <button class="border-solid text-white font-bold border-gray-300 w-full border-2 p-4 hover:bg-lime-300 transistion duration-300">Information</button>
+      </div>
+    </div>
+    <!--CONTAINERS-->
+    <div class="w-full bg-lime-500">
+      <div  class="max-w-7xl mx-auto grid grid-cols-2 items-center bg-lime-500 md:grid-cols-4 px-20 p-20 md:px-40 md:py-14 gap-5">
+        <div class="  border-2 h-full hover:bg-lime-300 transistion duration-300">
+          <a class="">
+            <h5></h5>
+            <img src="./Images/Information/e-visa_en_overlay_white_edit_1.png">
+          </a>
+        </div>
+        <div class="border-2 h-full hover:bg-lime-300 transistion duration-300">
+          <a class="">
+            <img src="./Images/Information/information_en_overlay_white_edit_1.png">
+          </a>
+        </div>
+        <div class="border-2 h-full hover:bg-lime-300 transistion duration-300">
+          <a >
+            <img class="w-full h-full" src="./Images/Information/service_en_overlay_white_edit_1.png">
+          </a>
+        </div>
+        <div class="border-2 h-full hover:bg-lime-300">
+          <a >
+            <img class="w-full h-full" src="./Images/Information/business_en_copy.png">
+          </a>
+        </div>
+      </div> 
+    </div>
+
+    <!-- THE MISTERY -->
+
+    <!--BUTTON-->
+    <div class="w-full">
+      <!--Button-->
+      <div >
+        <div class="flex justify-center px-10 py-10">
+          <button class="border-solid border-2 text-xl text-gray-600 px-16 py-6 transision duration-300 hover:bg-gray-200">The Ministry</button>
+        </div>
+      </div>
+      <div>
+        <!--LIST-->
+          <ul class="flex flex-row justify-around md:hidden">
+            <li class="dot cursor-pointer" onclick="currentSlide(1)">The Ministry</li>
+            <li class="dot cursor-pointer" onclick="currentSlide(2)">Press Release</li>
+            <li class="dot cursor-pointer" onclick="currentSlide(3)">Foreign policy</li>
+          </ul>
+        <div class="mx-auto grid grid-cols-1 md:hidden">
+          <div class="slide1 border-2 border-gray-300 md:border-none m-8 rounded-md h-[700px]">
+            <div class="w-full h-[65%]">
+              <a><img class="w-full h-full object-cover rounded-md" src="./Images/TheMistery/SK_Foreigner-Minister_NEW.jpg"></a>
+            </div>
+            <div class="w-full h-[35%]">
+              <a>
+                <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>The Minister</a></h5>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>>Biography</a></h6>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>> Interviews</a></h6>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>>Selected Travels</a></h6>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 mb-3 hover:underline hover:opacity-90"><a>>Speeches</a></h6>
+              </a>
+            </div>
+          </div>
+          <div class="slide1 border-2 border-gray-200 md:border-none m-8 rounded-md h-[700px]">
+            <div class="w-full h-[65%]">
+              <a><img class="w-full h-full object-cover rounded-md" src="./Images/TheMistery/press_release .jpg"></a>
+            </div>
+            <div class="w-full h-[35%]">
+              <a>
+                <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Press Release</a></h5>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>> Deputy Prime Minister SOK Chenda Sophea to take part in the Eighth Mekong-Lancang Cooperation Foreign Ministers’ Meeting in Beijing.</a></h6>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>> Training on Law of the Sea for Cambodian, Lao and Vietnamese Officials.</a></h6>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 mb-3 hover:underline hover:opacity-90"><a>> The Taske of Angkor"wins Best Television Awards in the World "</a></h6>
+              </a>
+            </div>
+          </div>
+          <div class="slide1 border-2 border-gray-200 md:border-none m-8 rounded-md h-[700px]">
+            <div class="w-full h-[65%]">
+              <a><img class="w-full h-full object-cover rounded-md" src="./Images/TheMistery/truth_en.jpg"></a>
+            </div class="w-full h-[35%]">
+            <div>
+              <a>
+                <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Foreign Policy</a></h5>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>> Direction of Cambodia Foreign Policy</a></h6>
+                <h5 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Cambodia Policy</a></h5>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>> Rectangular Strategies</a></h6>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90 "><a>> Political Platform</a></h6>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90 "><a>> Investment Policy</a></h6>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90 mb-3"><a>> Industrial Development Policy 2015-2025</a></h6>
+              </a>
+            </div>
+          </div>
+        </div>
+        </div>
+    
+        <div class="max-w-7xl mx-auto w-full hidden md:grid md:grid-cols-3 gap-5">
+        
+          <div class="border-2 border-gray-200 md:border-none">
+            <div>
+              <a><img class="w-full" src="./Images/TheMistery/SK_Foreigner-Minister_NEW.jpg"></a>
+            </div>
+            <div>
+              <a>
+                <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>The Minister</a></h5>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>>Biography</a></h6>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>> Interviews</a></h6>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>>Selected Travels</a></h6>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 mb-3 hover:underline hover:opacity-90"><a>>Speeches</a></h6>
+              </a>
+            </div>
+          </div>
+          <div class="border-2 border-gray-200 md:border-none">
+            <div>
+              <a><img class="w-full" src="./Images/TheMistery/press_release .jpg"></a>
+            </div>
+            <div>
+              <a>
+                <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Press Release</a></h5>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>> Deputy Prime Minister SOK Chenda Sophea to take part in the Eighth Mekong-Lancang Cooperation Foreign Ministers’ Meeting in Beijing.</a></h6>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>> Training on Law of the Sea for Cambodian, Lao and Vietnamese Officials.</a></h6>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 mb-3 hover:underline hover:opacity-90"><a>> The Taske of Angkor"wins Best Television Awards in the World "</a></h6>
+              </a>
+            </div>
+          </div>
+          <div class="border-2 border-gray-200 md:border-none">
+            <div>
+              <a><img class="w-full" src="./Images/TheMistery/truth_en.jpg"></a>
+            </div>
+            <div>
+              <a>
+                <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Foreign Policy</a></h5>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>> Direction of Cambodia Foreign Policy</a></h6>
+                <h5 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Cambodia Policy</a></h5>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>> Rectangular Strategies</a></h6>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>> Political Platform</a></h6>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>> Investment Policy</a></h6>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 mb-3 hover:underline hover:opacity-90"><a>> Industrial Development Policy 2015-2025</a></h6>
+              </a>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!--news -->
+    <!--button-->
+    <div >
+      <div class="flex justify-center px-10 py-10">
+        <a href="./news.html" class="border-solid border-2 text-xl text-gray-600 px-16 py-6 transision duration-300 hover:bg-gray-200">News</a>
+      </div>
+    </div>
+
+    <div class="w-full px-10"> 
+      <div class="relative mx-auto ">
+      <div class="border-2 border-gray-200 lg:border-none lg:hidden">
+        <div class="slidenews relative w-full h-[500px]">
+          <div class="w-full h-[70%]">
+            <a><img class="w-full h-full object-cover" src="./Images/News/1.jpg"></a>
+          </div>
+          <div class="w-full h-[30%]">
+            <a>
+              <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Courtesy Call by Ambassador Extraordinary and Plenipotentiary of the Republic of Ireland</a></h5>
+              <h6 class="font-bold text-xs text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>On 05 December 2023, His Excellency KHUON Phon Rattanak, Secretary of State of the Ministry of Foreign Affairs and..</a></h6>
+              <h6 class="font-bold text-xs text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Read more...</a></h6>
+            </a>
+          </div>
+        </div>  
+        <div class="slidenews relative w-full h-[500px]">
+          <div class="w-full h-[70%]">
+            <a><img class="w-full h-full object-cover" src="./Images/News/2.jpeg"></a>
+          </div>
+          <div class="w-full h-[30%]">
+            <a>
+              <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Courtesy Call by Minister/Deputy Chief of Mission, Embassy of Japan</a></h5>
+              <h6 class="font-bold text-xs text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>On 4 December 2023, His Excellency MEAS Kim Heng, Secretary of State and Cambodia’s SOM Leader...</a></h6>
+              <h6 class="font-bold text-xs text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Read more...</a></h6>
+            </a>
+          </div>
+         </div>
+         <div class="slidenews relative w-full h-[500px]">
+          <div class="w-full h-[70%]">
+            <a><img class="w-full h-full object-cover" src="./Images/News/3.jpeg"></a>
+          </div>
+          <div class="w-full h-[30%]">
+            <a>
+              <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Meeting with Ambassador of the Federal Republic of Germany and...</a></h5>
+              <h6 class="font-bold text-xs text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>On 01 December 2023, His Excellency Dr. CHEM Widhya, Secretary of State of the Ministry of Foreign Affairs and...</a></h6>
+              <h6 class="font-bold text-xs text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Read more...</a></h6>
+            </a>
+          </div>
+         </div>
+         <div class="slidenews relative w-full h-[500px]">
+          <div class="w-full h-[70%]">
+            <a><img class="w-full h-full object-cover" src="./Images/News/4.jpeg"></a>
+          </div>
+          <div class="w-full h-[30%]">
+            <a>
+              <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Courtesy Call by the Vietnamese Delegation</a></h5>
+              <h6 class="font-bold text-xs text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>As assigned by His Excellency Deputy Prime Minister and Minister of Foreign Affairs and International...</a></h6>
+              <h6 class="font-bold text-xs text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Read more...</a></h6>
+            </a>
+          </div>
+         </div>
+         <div class="slidenews relative w-full h-[500px]">
+          <div class="w-full h-[70%]">
+            <a><img class="w-full h-full object-cover" src="./Images/News/5.jpeg"></a>
+          </div>
+          <div class="w-full h-[30%]">
+            <a>
+              <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Happy Water Festival.</a></h5>
+              <h6 class="font-bold text-xs text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Read more...</a></h6>
+            </a>
+          </div>
+         </div>
+         <div class="slidenews relative w-full h-[500px]">
+          <div class="w-full h-[70%]">
+            <a><img class="w-full h-full object-cover" src="./Images/News/6.jpeg"></a>
+          </div>
+          <div class="w-full h-[30%]">
+            <a>
+              <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>The 11th Mekong-ROK Business Forum</a></h5>
+              <h6 class="font-bold text-xs text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>On 24th November 2023, His Excellency MEAS Kim Heng, Secretary of State, Cambodia’s SOM Leader for</a></h6>
+              <h6 class="font-bold text-xs text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Read more...</a></h6>
+            </a>
+          </div>
+         </div>
+         <div class="slidenews relative w-full h-[500px]">
+          <div class="w-full h-[70%]">
+            <a><img class="w-full h-full object-cover" src="./Images/News/7.jpeg"></a>
+          </div>
+          <div class="w-full h-[30%]">
+            <a>
+              <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Meeting with Ambassador of the Federal Republic of Germany and...</a></h5>
+              <h6 class="font-bold text-xs text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>On 01 December 2023, His Excellency Dr. CHEM Widhya, Secretary of State of the Ministry of Foreign...</a></h6>
+              <h6 class="font-bold text-xs text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Read more...</a></h6>
+            </a>
+          </div>
+         </div>
+         <div class="slidenews relative w-full h-[500px]">
+          <div class="w-full h-[70%]">
+            <a><img class="w-full h-full object-cover" src="./Images/News/8.jpeg"></a>
+          </div>
+          <div class="w-full h-[30%]">
+            <a>
+              <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>The First Bilateral Consultations</a></h5>
+              <h6 class="font-bold text-xs text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>On 23 November 2023, His Excellency Dr. CHEM Widhya, Secretary of State of the Ministry of Foreign...</a></h6>
+              <h6 class="font-bold text-xs text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Read more...</a></h6>
+            </a>
+          </div>
+         </div>
+      </div>
+     </div> 
+
+    <!--news-->
+     <div class=" max-w-7xl mx-auto hidden border-2  md:border-none lg:block lg:grid lg:grid-cols-2 gap-5">
+        <div class="">
+          <div class="relative">
+            <div>
+              <a><img src="./Images/News/1.jpg"></a>
+            </div>
+            <div>
+              <a>
+                <h5 class="font-bold text-sm text-blue-900 cursor-pointer mt-3 ml-3  hover:underline hover:opacity-90"><a>Courtesy Call by Ambassador Extraordinary and Plenipotentiary of the Republic of Ireland</a></h5>
+                <h6 class="font-bold text-xs text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>On 05 December 2023, His Excellency KHUON Phon Rattanak, Secretary of State of the Ministry of Foreign Affairs and International Cooperation...</a></h6>
+                <h6 class="font-bold text-xs text-blue-900 cursor-pointer mt-3 ml-3 mb-3 hover:underline hover:opacity-90"><a>Read more...</a></h6>
+              </a>
+            </div>
+          </div>  
+        </div>
+        <div class="grid gap-5">
+          <div class="relative grid grid-cols-2">
+            <div>
+              <a><img class="w-72 object-fill" src="./Images/News/2.jpeg"></a>
+            </div>
+            <div>
+              <a>
+                <h5 class="font-bold text-sm text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Courtesy Call by Minister/Deputy Chief of Mission, Embassy of Japan</a></h5>
+                <h6 class="font-bold text-xs text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>On 4 December 2023, His Excellency MEAS Kim Heng, Secretary of State and Cambodia’s SOM Leader...</a></h6>
+                <h6 class="font-bold text-xs text-blue-900 cursor-pointer mt-3 ml-3 mb-3 hover:underline hover:opacity-90"><a>Read more...</a></h6>
+              </a>
+            </div>
+           </div>
+           <div class="relative grid grid-cols-2">
+            <div>
+              <a><img class="w-72" src="./Images/News/3.jpeg"></a>
+            </div>
+            <div >
+              <a>
+                <h5 class="font-bold text-sm text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Meeting with Ambassador of the Federal Republic of Germany and...</a></h5>
+                <h6 class="font-bold text-xs text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>On 01 December 2023, His Excellency Dr. CHEM Widhya, Secretary of State of</a></h6>
+                <h6 class="font-bold text-xs text-blue-900 cursor-pointer mt-3 ml-3 mb-3 hover:underline hover:opacity-90"><a>Read more...</a></h6>
+              </a>
+            </div>
+           </div>
+           <div class="relative grid grid-cols-2">
+            <div>
+              <a><img class="w-72" src="./Images/News/4.jpeg"></a>
+            </div>
+            <div >
+              <a>
+                <h5 class="font-bold text-sm text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Courtesy Call by the Vietnamese Delegation</a></h5>
+                <h6 class="font-bold text-xs text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>As assigned by His Excellency Deputy Prime Minister and Minister of Foreign Affairs and International...</a></h6>
+                <h6 class="font-bold text-xs text-blue-900 cursor-pointer mt-3 ml-3 mb-3 hover:underline hover:opacity-90"><a>Read more...</a></h6>
+              </a>
+            </div>
+           </div>
+        </div>
+         <!-- <div class="relative">
+          <div>
+            <a><img class="w-full" src="/IMG/News/5.jpeg"></a>
+          </div>
+          <div >
+            <a>
+              <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3"><a>Happy Water Festival.</a></h5>
+              <h6 class="font-bold text-xs text-blue-900 cursor-pointer mt-3 ml-3"><a>Read more...</a></h6>
+            </a>
+          </div>
+         </div>
+         <div class="relative">
+          <div>
+            <a><img class="w-full" src="/IMG/News/6.jpeg"></a>
+          </div>
+          <div >
+            <a>
+              <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3"><a>The 11th Mekong-ROK Business Forum</a></h5>
+              <h6 class="font-bold text-xs text-gray-400 cursor-pointer mt-3 ml-3"><a>On 24th November 2023, His Excellency MEAS Kim Heng, Secretary of State, Cambodia’s SOM Leader for</a></h6>
+              <h6 class="font-bold text-xs text-blue-900 cursor-pointer mt-3 ml-3"><a>Read more...</a></h6>
+            </a>
+          </div>
+         </div>
+         <div class="relative">
+          <div>
+            <a><img class="w-full" src="/IMG/News/7.jpeg"></a>
+          </div>
+          <div >
+            <a>
+              <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3"><a>Meeting with Ambassador of the Federal Republic of Germany and...</a></h5>
+              <h6 class="font-bold text-xs text-gray-400 cursor-pointer mt-3 ml-3"><a>On 01 December 2023, His Excellency Dr. CHEM Widhya, Secretary of State of the Ministry of Foreign...</a></h6>
+              <h6 class="font-bold text-xs text-blue-900 cursor-pointer mt-3 ml-3"><a>Read more...</a></h6>
+            </a>
+          </div>
+         </div>
+         <div class="relative">
+          <div>
+            <a><img class="w-full" src="/IMG/News/8.jpeg"></a>
+          </div>
+          <div >
+            <a>
+              <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3"><a>The First Bilateral Consultations</a></h5>
+              <h6 class="font-bold text-xs text-gray-400 cursor-pointer mt-3 ml-3"><a>On 23 November 2023, His Excellency Dr. CHEM Widhya, Secretary of State of the Ministry of Foreign...</a></h6>
+              <h6 class="font-bold text-xs text-blue-900 cursor-pointer mt-3 ml-3"><a>Read more...</a></h6>
+            </a>
+          </div>
+         </div> -->
+      </div>
+      <br>
+      </div>
+      <!-- The dots -->
+      <div class="flex justify-center items-center space-x-5 lg:hidden ">
+        <div class="dots w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide1(1)"></div>
+        <div class="dots w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide1(2)"></div>
+        <div class="dots w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide1(3)"></div>
+        <div class="dots w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide1(4)"></div>
+        <div class="dots w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide1(5)"></div>
+        <div class="dots w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide1(6)"></div>
+        <div class="dots w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide1(7)"></div>
+        <div class="dots w-4 h-4 rounded-full cursor-pointer" onclick="currentSlide1(8)"></div>
+      </div>
+      
+
+      <!--Embassy News-->
+      <div class="w-full">
+        <div>
+          <div class="h-[500px] p-3 relative md:hidden">
+            <div class="w-72 mx-auto" style="scroll-snap-type: x mandatory;">
+               <!-- first -->
+               <div class="">
+                  <input class="sr-only peer" type="radio" name="carousel" id="carousel-1" checked />
+                  <!-- content #1 -->
+                  <div
+                     class="w-72 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-lg transition-all duration-300 opacity-0 peer-checked:opacity-100 peer-checked:z-10 z-0">
+                     <img class="rounded-t-lg w-full h-[60%] object-cover" src="./Images/EmbassyNews/1.jpeg" alt="" />
+                     <div class="py-4 px-8 h-[40%]">
+                        <a>
+                          <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3  hover:underline hover:opacity-90"><a>Fund-Raising Gala Dinner</a></h5>
+                          <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>On 3 December 2023, His Excellency Dr. CHEUNBORAN..</a></h6>
+                          <h6 class="font-bold text-sm text-blue-900 cursor-pointer mt-3 ml-3 mb-3 hover:underline hover:opacity-90"><a>Read more...</a></h6>
+                        </a>
+                     </div>
+                     <!-- controls -->
+                     <div class="absolute top-1/2 w-full flex justify-between z-20">
+                        <label for="carousel-3" class="inline-block text-red-600 cursor-pointer -translate-x-5 bg-white rounded-full shadow-md active:translate-y-0.5">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+                              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+                           </svg>
+                        </label>
+                        <label for="carousel-2" class="inline-block text-red-600 cursor-pointer translate-x-5 bg-white rounded-full shadow-md active:translate-y-0.5">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+                              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" />
+                           </svg>
+                        </label>
+                     </div>
+                  </div>
+               </div>
+               <!-- second -->
+               <div class="">
+                  <input class="sr-only peer" type="radio" name="carousel" id="carousel-2" />
+                  <!-- content #2 -->
+                  <div
+                     class="w-72 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-lg transition-all duration-300 opacity-0 peer-checked:opacity-100 peer-checked:z-10 z-0">
+                     <img class="rounded-t-lg w-full h-[60%] object-cover" src="./Images/EmbassyNews/2.jpeg" alt="" />
+                     <div class="py-4 px-8 h-[40%]">
+                      <a>
+                        <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Hosting a Dinner at Residence Charles Floque</a></h5>
+                        <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>On 2 December 2023, His Excellency LUY David...</a></h6>
+                        <h6 class="font-bold text-sm text-blue-900 cursor-pointer mt-3 ml-3 mb-3 hover:underline hover:opacity-90"><a>Read more...</a></h6>
+                      </a>
+                     </div>
+                     <!-- controls -->
+                     <div class="absolute top-1/2 w-full flex justify-between z-20">
+                        <label for="carousel-1" class="inline-block text-blue-600 cursor-pointer -translate-x-5 bg-white rounded-full shadow-md active:translate-y-0.5">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+                              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+                           </svg>
+                        </label>
+                        <label for="carousel-3" class="inline-block text-blue-600 cursor-pointer translate-x-5 bg-white rounded-full shadow-md active:translate-y-0.5">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+                              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" />
+                           </svg>
+                        </label>
+                     </div>
+                  </div>
+               </div>
+               <!-- three -->
+               <div class="">
+                  <input class="sr-only peer" type="radio" name="carousel" id="carousel-3" />
+                  <!-- content #3 -->
+                  <div
+                     class="w-72 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-lg transition-all duration-300 opacity-0 peer-checked:opacity-100 peer-checked:z-10 z-0">
+                     <img class="rounded-t-lg w-full h-[60%] object-cover" src="./Images/EmbassyNews/3.jpeg" alt="" />
+                     <div class="py-4 px-8 h-[40%]">
+                      <a>
+                        <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Opening Ceremony of the 18th...</a></h5>
+                        <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>On 02 December 2023, His Excellency KOY Kuong,...</a></h6>
+                        <h6 class="font-bold text-sm text-blue-900 cursor-pointer mt-3 ml-3 mb-3 hover:underline hover:opacity-90"><a>Read more...</a></h6>
+                      </a>
+                     </div>
+                     <!-- controls -->
+                     <div class="absolute top-1/2 w-full flex justify-between z-20">
+                        <label for="carousel-2" class="inline-block text-yellow-600 cursor-pointer -translate-x-5 bg-white rounded-full shadow-md active:translate-y-0.5">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+                              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+                           </svg>
+                        </label>
+                        <label for="carousel-1" class="inline-block text-yellow-600 cursor-pointer translate-x-5 bg-white rounded-full shadow-md active:translate-y-0.5">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+                              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" />
+                           </svg>
+                        </label>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+          </div>
+     
+          <div class=" max-w-7xl mx-auto hidden md:block md:grid md:grid-cols-3 gap-5 mt-10">
+            <div class="relative">
+              <div>
+                <a><img class="w-full" src="./Images/EmbassyNews/1.jpeg"></a>
+              </div>
+              <div>
+                <a>
+                  <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Fund-Raising Gala Dinner</a></h5>
+                  <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>On 3 December 2023, His Excellency Dr. CHEUNBORAN..</a></h6>
+                  <h6 class="font-bold text-sm text-blue-900 cursor-pointer mt-3 ml-3 mb-3 hover:underline hover:opacity-90"><a>Read more...</a></h6>
+                </a>
+              </div>
+            </div>
+            <div>
+              <div>
+                <a><img class="w-full" src="./Images/EmbassyNews/2.jpeg"></a>
+              </div>
+              <div>
+                <a>
+                  <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Hosting a Dinner at Residence Charles Floque</a></h5>
+                  <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>On 2 December 2023, His Excellency LUY David...</a></h6>
+                  <h6 class="font-bold text-sm text-blue-900 cursor-pointer mt-3 ml-3 mb-3 hover:underline hover:opacity-90"><a>Read more...</a></h6>
+                </a>
+              </div>
+            </div>
+            <div>
+              <div>
+                <a><img class="w-full" src="./Images/EmbassyNews/3.jpeg"></a>
+              </div>
+              <div>
+                <a>
+                  <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>Opening Ceremony of the 18th...</a></h5>
+                  <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3 hover:underline hover:opacity-90"><a>On 02 December 2023, His Excellency KOY Kuong,...</a></h6>
+                  <h6 class="font-bold text-sm text-blue-900 cursor-pointer mt-3 ml-3 mb-3 hover:underline hover:opacity-90"><a>Read more...</a></h6>
+                </a>
+              </div>
+            </div>
+            <!-- <div>
+              <div>
+                <a><img class="w-full" src="./Images/EmbassyNews/4.jpeg"></a>
+              </div>
+              <div>
+                <a>
+                  <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3"><a>Ambassador of the Year Award</a></h5>
+                  <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3"><a>On 01 December 2023, His Excellency PHAN Peuv,...</a></h6>
+                  <h6 class="font-bold text-sm text-blue-900 cursor-pointer mt-3 ml-3 mb-3"><a>Read more...</a></h6>
+                </a>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+
+      <!--media & culture-->
+      <div class="w-full">
+        <div >
+          <div class="flex justify-center px-10 py-10">
+            <button class="border-solid border-2 text-xl text-gray-600 px-16 py-6">Media & Culture</button>
+          </div>
+        </div>
+ 
+          <div class="max-w-7xl mx-auto justify-center grid grid-cols-1">
+            <iframe  width="100%" height="500px" src="https://www.youtube.com/embed/axsgVf2Oy7Q?si=e4AjisSBFOgPDwsK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="text-xs text-gray-400 mt-5">
+              Video on the Bilateral Meeting between His Excellency SOK Chenda Sophea, Deputy Prime Minister and Minister of Foreign Affairs and International Cooperation, and His Excellency Mauro Vieira, Minister of Foreign Affairs of the Federative Republic of Brazil, during the latter’s official visit to the Kingdom of Cambodia.
+            </div>
+            <a href="video.html" class="text-blue-900 text-end my-5 mr-3 hover:underline hover:opacity-70">More Vidoes</a>
+          </div>
+      </div>
+
+    <!--last layout-->
+    
+    <div class="w-full px-10">
+      <div class="max-w-7xl mx-auto w-full grid  grid-cols-2 md:grid-cols-3 gap-10">
+          <div class="md:w-auto">
+            <div class="w-full h-50% md:h-65%">
+              <a><img class="w-full" src="./Images/FooterLayout/1.jpg"></a>
+            </div>
+            <div class="w-full h-35%">
+              <a>
+                <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3"><a>The Taste of Angkor” is the “Best Asian Cookbook” at the Gourmand World Cookbook</a></h5>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3"><a>The Taste of Angkor Cookbook was proudly presented at the Umeå Food Symposium in Sweden on 2-5 June</a></h6>
+                <h6 class="font-bold text-sm text-blue-900 cursor-pointer mt-3 ml-3 mb-3"><a>Read more...</a></h6>
+              </a>
+            </div>
+          </div>
+    
+          <div class="md:w-auto">
+            <div class="w-full h-50% md:h-65%">
+              <a><img class="w-full " src="./Images/FooterLayout/2.jpeg"></a>
+            </div>
+            <div class="w-full res:h-35%">
+              <a>
+                <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3"><a>The Taste of Angkor” is the “Best Asian Cookbook” at the Gourmand World Cookbook</a></h5>
+                <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3"><a>The Taste of Angkor Cookbook was proudly presented at the Umeå Food Symposium in Sweden on 2-5 June</a></h6>
+                <h6 class="font-bold text-sm text-blue-900 cursor-pointer mt-3 ml-3 mb-3"><a>Read more...</a></h6>
+              </a>
+            </div>
+          </div>
+  
+        <div class="md:w-auto col-span-2 md:col-span-1">
+          <div class="w-full  h-50% res:h-65%">
+            <a><img class="w-full" src="./Images/FooterLayout/3.jpeg"></a>
+          </div>
+          <div class="w-full res:h-35%">
+            <a>
+              <h5 class="font-bold  text-blue-900 cursor-pointer mt-3 ml-3"><a>The Taste of Angkor” is the “Best Asian Cookbook” at the Gourmand World Cookbook</a></h5>
+              <h6 class="font-bold text-sm text-gray-400 cursor-pointer mt-3 ml-3"><a>The Taste of Angkor Cookbook was proudly presented at the Umeå Food Symposium in Sweden on 2-5 June</a></h6>
+              <h6 class="font-bold text-sm text-blue-900 cursor-pointer mt-3 ml-3 mb-3"><a>Read more...</a></h6>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--footter layout-->
+
+    <!--Footer-->
+    <footer class="bg-gray-300">
+      <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
+        <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="sm:col-span-2">
+            <a href="./index.html" aria-label="Go home" title="Company" class="inline-flex items-center">
+              <img src="./Images/Header/image1.webp" alt="logos" class="w-[50px] h-[50px]">
+              <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">Royal University of Agriculture</span>
+            </a>
+            <div class="mt-6 lg:max-w-sm">
+              <p class="text-sm text-gray-800">
+                Royal University of Agriculture, Dongkor District, Phnom Penh, Cambodia, P.O.Box: 2696.
+              </p>
+              <p class="mt-4 text-sm text-gray-800">
+                Developed by www.parrotstudio.com
+              </p>
+            </div>
+          </div>
+          <div class="space-y-2 text-sm">
+              <a href="./contact.html" class="cursor-pointer">
+                  <p class="text-base font-bold tracking-wide text-gray-900">Contacts</p>
+              </a>
+            <div class="flex">
+              <p class="mr-1 text-gray-800">Phone:</p>
+              <div class="grid grid-rows-3">
+                  <a href="tel:855-17-584-150" aria-label="Our phone" title="Our phone" class="transition-colors duration-300 text-gray-800 hover:text-gray-500">+855 17 584 150</a>
+                  <a href="tel:850-123-5021" aria-label="Our phone" title="Our phone" class="transition-colors duration-300 text-gray-800 hover:text-gray-500">+855 77 396 864</a>
+                  <a href="tel:855-70-465-480" aria-label="Our phone" title="Our phone" class="transition-colors duration-300 text-gray-800 hover:text-gray-500">+855 17 684</a>
+              </div>
+            </div>
+            <div class="flex">
+              <p class="mr-1 text-gray-800">Email:</p>
+              <a href="mailto:admin@rua.edu.kh" aria-label="Our email" title="Our email" class="transition-colors duration-300 text-gray-800 hover:text-gray-500">admin@rua.edu.kh</a>
+            </div>
+            <div class="flex">
+              <p class="mr-1 text-gray-800">Address:</p>
+              <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" aria-label="Our address" title="Our address" class="transition-colors duration-300 text-gray-800 hover:text-gray-500">
+                Dongkor, Phnom Penh
+              </a>
+            </div>
+          </div>
+          <div>
+            <span class="text-base font-bold tracking-wide text-gray-900 ">Social</span>
+            <div class="flex items-center mt-1 space-x-3">
+              <a href="/" class="text-gray-500 transition-colors duration-300 hover:scale-110">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="23" height="23" viewBox="0,0,256,256">
+                  <g transform="translate(-24.32,-24.32) scale(1.19,1.19)"><g fill="#6b7280" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M14,3.99023c-5.51133,0 -10,4.48867 -10,10v22c0,5.51133 4.48867,10 10,10h22c5.51133,0 10,-4.48867 10,-10v-22c0,-5.51133 -4.48867,-10 -10,-10zM18.00586,12.0332c0.628,0.027 1.20473,0.38083 1.55273,0.92383c0.396,0.618 1.01055,1.57712 1.81055,2.82813c0.73,1.141 0.78091,2.61469 0.12891,3.80469l-1.46484,2.08398c-0.396,0.564 -0.47498,1.28588 -0.20898,1.92188c0.414,0.99 1.21658,2.5115 2.64258,3.9375c1.426,1.426 2.9475,2.22858 3.9375,2.64258c0.636,0.266 1.35788,0.18702 1.92188,-0.20898l2.08398,-1.46484c1.19,-0.652 2.66369,-0.60009 3.80469,0.12891c1.251,0.8 2.21012,1.41455 2.82813,1.81055c0.543,0.348 0.89683,0.92473 0.92383,1.55273c0.154,3.564 -2.60716,5.00781 -3.41016,5.00781c-0.556,0 -7.2403,0.7597 -14.7793,-6.7793c-7.539,-7.539 -6.7793,-14.2233 -6.7793,-14.7793c0,-0.803 1.44381,-3.56416 5.00781,-3.41016z"></path></g></g></g>
+                  </svg>
+              </a>
+              <a href="/" class="text-gray-500 transition-colors duration-300 hover:scale-110">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="23" height="23" viewBox="0,0,256,256">
+                  <g transform="translate(-11.52,-11.52) scale(1.09,1.09)"><g fill="#6b7280" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M25,2c12.703,0 23,10.297 23,23c0,12.703 -10.297,23 -23,23c-12.703,0 -23,-10.297 -23,-23c0,-12.703 10.297,-23 23,-23zM32.934,34.375c0.423,-1.298 2.405,-14.234 2.65,-16.783c0.074,-0.772 -0.17,-1.285 -0.648,-1.514c-0.578,-0.278 -1.434,-0.139 -2.427,0.219c-1.362,0.491 -18.774,7.884 -19.78,8.312c-0.954,0.405 -1.856,0.847 -1.856,1.487c0,0.45 0.267,0.703 1.003,0.966c0.766,0.273 2.695,0.858 3.834,1.172c1.097,0.303 2.346,0.04 3.046,-0.395c0.742,-0.461 9.305,-6.191 9.92,-6.693c0.614,-0.502 1.104,0.141 0.602,0.644c-0.502,0.502 -6.38,6.207 -7.155,6.997c-0.941,0.959 -0.273,1.953 0.358,2.351c0.721,0.454 5.906,3.932 6.687,4.49c0.781,0.558 1.573,0.811 2.298,0.811c0.725,0 1.107,-0.955 1.468,-2.064z"></path></g></g></g>
+                  </svg>
+              </a>
+              <a href="/" class="text-gray-500 transition-colors duration-300 hover:scale-110">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
+                  <path
+                    d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+            <p class="mt-4 text-sm text-gray-800">
+            You can reach us from those platform.
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row">
+          <p class="text-sm text-gray-600">
+            © Copyright 2023. All rights reserved.
+          </p>
+          <ul class="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
+            <li>
+              <a href="/" class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">F.A.Q</a>
+            </li>
+            <li>
+              <a href="/" class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="/" class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Terms &amp; Conditions</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
+    <script src="./Js/script.js"></script>
+    <!-- Development version -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Production version -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+    
+  </body>
+</html>
